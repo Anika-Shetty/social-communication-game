@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        body {
+          font-size: x-large;
+          background-color: #b1adde;
+          color: #267;
+          margin: 0;
+          padding: 0;
+        }
+
+        .container {
+          margin: 20px auto 0;
+          position: relative;
+          width: 90%;
+        }
+
+        .scene {
+          margin: 0 auto;
+          width: 90%;
+        }
+
+        img[usemap] {
+        border: none;
+        height: auto;
+          max-width: 100%;
+        width: auto;
+        }
+
+        .navbar {
+            background-color: rgb(74, 121, 139);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-grow: 1;
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar a {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+      </style>
+  </head>
+
+  <body>
+      <nav class="navbar">
+
+        <img src="./logo.png" alt="Logo">
+          <ul>
+              <li><a href="./home.html">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+      </nav>
+      <div class="container">
+        <div class="scene" id="image_scene">
+        </div>
+      </div>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="https://res.cloudinary.com/positionrelativ/raw/upload/v1492377595/jquery.rwdImageMaps_lq5sye.js"></script>
+      <script>
+        link_config = {
+          "images/3.1.1-(3.1.2.1,3.7+3.10.1,3.1.2.2).png": {
+            "images/3.1.2.1-(3.6+3.9.1).png": "969,460,1215,1490",
+            "images/3.7+3.10.1-(3.10.2.1,3.10.2.2).png": "1295,460,1541,1490",
+            "images/3.1.2.2-(3.8+3.11.1).png": "1625,482,1867,1478"
+          },
+          "images/3.1.2.1-(3.6+3.9.1).png": {
+            "images/3.6+3.9.1-(3.9.2,3.14).1.png": "90,89,1910,1513"
+          },
+          "images/3.1.2.2-(3.8+3.11.1).png": {
+            "images/3.8+3.11.1-(3.14,3.11.2.1,3.11.2.2).png": "90,89,1910,1513"
+          },
+          "images/3.10.2.1.png": {
+            "images/41.png": "90,89,1910,1513"
+          },
+          "images/3.10.2.2.png": {
+            "images/42.png": "90,89,1910,1513"
+          },
+          "images/3.11.2.1-(3.8+3.11.1).png": {
+            "images/3.8+3.11.1-(3.14,3.11.2.1,3.11.2.2).png": "90,89,1910,1513"
+          },
+          "images/3.11.2.2-(3.14).png": {
+            "images/3.14.png": "90,89,1910,1513"
+          },
+          "images/3.14.png": {
+            "images/9.png": "90,89,1910,1513"
+          },
+          "images/3.6+3.9.1-(3.9.2,3.14).1.png": {
+            "images/3.9.2-(3.14).png": "971,459,1391,1488",
+            "images/3.14.png": "1447,459,1867,1488"
+          },
+          "images/3.7+3.10.1-(3.10.2.1,3.10.2.2).png": {
+            "images/3.10.2.1.png": "969,460,1215,1490",
+            "images/3.10.2.2.png": "1625,482,1867,1478"
+          },
+          "images/3.8+3.11.1-(3.14,3.11.2.1,3.11.2.2).png": {
+            "images/3.14.png": "969,460,1215,1490",
+            "images/3.11.2.1-(3.8+3.11.1).png": "1295,460,1541,1490",
+            "images/3.11.2.2-(3.14).png": "1625,482,1867,1478"
+          },
+          "images/3.9.2-(3.14).png": {
+            "images/3.14.png": "90,89,1910,1513"
+          },
+          "images/30.1.2.png": {},
+          "images/30.9.2.png": {},
+          "images/36.png": {},
+          "images/37.png": {},
+          "images/38.png": {},
+          "images/4.1.1-(4.1.2.1,4.7+4.10.1,4.1.2.2).png": {
+            "images/4.1.2.1-(4.6+4.9.1).png": "969,460,1215,1490",
+            "images/4.7+4.10.1-(4.10.2.1,4.22+4.26.1,4.10.2.2).png": "1295,460,1541,1490",
+            "images/4.1.2.2-(4.8+4.11.1).png": "1625,482,1867,1478"
+          },
+          "images/4.1.2.1-(4.6+4.9.1).png": {
+            "images/4.6+4.9.1-(4.9.2).png": "90,89,1910,1513"
+          },
+          "images/4.1.2.2-(4.8+4.11.1).png": {
+            "images/4.8+4.11.1-(4.11.2.1,4.11.2.2,4.25+4.27.1).png": "90,89,1910,1513"
+          },
+          "images/4.10.2.1-(4.21).png": {
+            "images/4.21.png": "90,89,1910,1513"
+          },
+          "images/4.10.2.2-(4.23).png": {
+            "images/4.23.png": "90,89,1910,1513"
+          },
+          "images/4.11.2.1-(4.21).png": {
+            "images/4.21.png": "90,89,1910,1513"
+          },
+          "images/4.11.2.2.png": {},
+          "images/4.21.png": {},
+          "images/4.22+4.26.1-(4.26.2).png": {
+            "images/4.26.2.png": "90,89,1910,1513"
+          },
+          "images/4.23.png": {},
+          "images/4.25+4.27.1-(4.34,4.27.2.1,4.27.2.2).png": {
+            "images/4.34.png": "969,460,1215,1490",
+            "images/4.27.2.1-(4.35).png": "1295,460,1541,1490",
+            "images/4.27.2.2-(4.36).png": "1625,482,1867,1478"
+          },
+          "images/4.26.2.png": {},
+          "images/4.27.2.1-(4.35).png": {
+            "images/4.35.png": "90,89,1910,1513"
+          },
+          "images/4.27.2.2-(4.36).png": {
+            "images/4.36.png": "90,89,1910,1513"
+          },
+          "images/4.34.png": {},
+          "images/4.35.png": {},
+          "images/4.36.png": {},
+          "images/4.6+4.9.1-(4.9.2).png": {
+            "images/4.9.2.png": "90,89,1910,1513"
+          },
+          "images/4.7+4.10.1-(4.10.2.1,4.22+4.26.1,4.10.2.2).png": {
+            "images/4.10.2.1-(4.21).png": "969,460,1215,1490",
+            "images/4.22+4.26.1-(4.26.2).png": "1295,460,1541,1490",
+            "images/4.10.2.2-(4.23).png": ""
+          },
+          "images/4.8+4.11.1-(4.11.2.1,4.11.2.2,4.25+4.27.1).png": {
+            "images/4.11.2.1-(4.21).png": "969,460,1215,1490",
+            "images/4.11.2.2.png": "1295,460,1541,1490",
+            "images/4.25+4.27.1-(4.34,4.27.2.1,4.27.2.2).png": "1625,482,1867,1478"
+          },
+          "images/4.9.2.png": {},
+          "images/40.png": {},
+          "images/41.png": {},
+          "images/42.png": {},
+          "images/43.png": {},
+          "images/44.png": {},
+          "images/45.png": {},
+          "images/5.33+ 5.36.png": {},
+          "images/6.png": {},
+          "images/7.png": {},
+          "images/8.png": {},
+          "images/9.png": {}
+        };
+
+
+        function generateImageMap(image) {
+          config = link_config[image];
+          image_scene = ("#image_scene")
+
+          part1 = '<img class="responsive" style="float:left;" src="./' + image + '" usemap="#image_map">' +
+            '<map id="image_map" name="image_map">';
+
+          part2 = Object.entries(config).map(function([name, coords]) {
+            // add onclick tag for area
+            return '<area alt="" title="" href="' + name + '" coords="' + coords + '" shape="rect" onclick="onAreaClick(event);">';
+          }).join('');
+
+          part3 = '</map>' +
+                  '</img>';
+
+          return part1 + part2 + part3;
+
+        };
+
+        function onAreaClick(event) {
+          event.preventDefault();
+          clickedArea = event.target;
+          clickedArea_href = clickedArea.href;
+          // replace the absolute path with relative path
+          clickedArea_href = "images/" + clickedArea_href.split("/images/")[1];
+          updateScene(clickedArea_href);
+        }
+
+        function updateScene(image) {
+          image_scene_html = generateImageMap(image);
+          $('#image_scene').html(image_scene_html);
+          $('img[usemap]').rwdImageMaps();
+        }
+
+        $(document).ready(function(e) {
+          updateScene("images/3.1.1-(3.1.2.1,3.7+3.10.1,3.1.2.2).png");
+        });
+      </script>
+  </body>
+</html>

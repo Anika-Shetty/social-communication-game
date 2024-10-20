@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Example</title>
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+            font-size: x-large;
+            margin: 0;
+            padding: 0;
+            background-color: #b1adde;
+        }
+
+        .navbar {
+            background-color: rgb(74, 121, 139);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-grow: 1;
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar a {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .content {
+            margin: 20px auto 0;
+            position: relative;
+            width: 90vw;
+        }
+
+        .content img {
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+        }
+
+        .content img:hover {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+
+      <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+      <a href="game.html"><img src="images/3.1.1-(3.1.2.1,3.7+3.10.1,3.1.2.2).png"></a>
+    </div>
+</body>
+</html>
